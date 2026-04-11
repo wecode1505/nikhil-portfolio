@@ -31,7 +31,7 @@ export const personalInfo = {
   degree: "B.Tech in Computer Science",
   resumeUrl: "#",
   socialLinks: {
-    github: "https://github.com/wecode1012",
+    github: "https://github.com/wecode1505",
     linkedin: "https://www.linkedin.com/in/riturajsingh1505",
     twitter: "https://twitter.com",
     instagram: "https://www.instagram.com/__nikhil.singh__15/",
