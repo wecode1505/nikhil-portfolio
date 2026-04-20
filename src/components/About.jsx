@@ -1,7 +1,9 @@
-import { useRef } from "react"
+import { useRef, lazy, Suspense } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { personalInfo } from "../data/personalInfo"
 import { FiMapPin, FiBook, FiCode } from "react-icons/fi"
+
+const AboutScene = lazy(() => import("./AboutScene"))
 
 export default function About() {
   const sectionRef = useRef(null)
@@ -13,8 +15,9 @@ export default function About() {
   const textY = useTransform(scrollYProgress, [0, 1], [20, -20])
 
   return (
-    <section id="about" className="py-20" ref={sectionRef}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="about" className="relative py-20" ref={sectionRef}>
+      <Suspense fallback={null}><AboutScene /></Suspense>
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* LN4 split heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -41,9 +44,9 @@ export default function About() {
           <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-papaya)]/[0.04] to-transparent pointer-events-none" />
 
           <blockquote className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-[var(--color-text)] max-w-4xl relative z-10">
-            It doesn&apos;t matter where you start,
+            Built different. Coded better. Trained harder.
             <br />
-            <span className="text-[var(--color-papaya)]">it&apos;s how you progress from there.</span>
+            <span className="text-[var(--color-papaya)]">Code. Combat. Calculus. Repeat at max speed.</span>
           </blockquote>
 
           {/* Signature-style name */}

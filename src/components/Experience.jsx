@@ -1,10 +1,14 @@
+import { lazy, Suspense } from "react"
 import { motion } from "framer-motion"
 import { experience } from "../data/personalInfo"
 
+const ExperienceScene = lazy(() => import("./ExperienceScene"))
+
 export default function Experience() {
   return (
-    <section id="experience" className="py-20">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="experience" className="relative py-20">
+      <Suspense fallback={null}><ExperienceScene /></Suspense>
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* LN4 split heading — like ON / TRACK */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -1,18 +1,67 @@
-import { useState } from "react"
+import { useState, lazy, Suspense } from "react"
 import { motion } from "framer-motion"
 import { personalInfo } from "../data/personalInfo"
-import { FiSend } from "react-icons/fi"
+import { FiSend, FiCheck, FiAlertCircle } from "react-icons/fi"
+
+const ContactScene = lazy(() => import("./ContactScene"))
+
+const WEB3FORMS_ACCESS_KEY = "041ce127-d23b-4bba-b8f0-0175b05ca3ba"
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
+  const [status, setStatus] = useState("idle") // idle | sending | success | error
+  const [statusMessage, setStatusMessage] = useState("")
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setStatus("sending")
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          from_name: "Portfolio Contact Form",
+          subject: `New message from ${formData.name}`,
+        }),
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setStatus("success")
+        setStatusMessage("Message sent! I'll get back to you soon.")
+        setFormData({ name: "", email: "", message: "" })
+      } else {
+        setStatus("error")
+        setStatusMessage("Something went wrong. Please try again.")
+      }
+    } catch {
+      setStatus("error")
+      setStatusMessage("Network error. Please try again later.")
+    }
+
+    setTimeout(() => {
+      setStatus("idle")
+      setStatusMessage("")
+    }, 5000)
+  }
+
   return (
-    <section id="contact" className="py-24">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="contact" className="py-24 relative">
+      {/* 3D Background Scene */}
+      <Suspense fallback={null}>
+        <ContactScene />
+      </Suspense>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* LN4 split heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -55,7 +104,7 @@ export default function Contact() {
             {/* Decorative quote */}
             <div className="mt-12 border-l-2 border-[var(--color-papaya)]/30 pl-6">
               <p className="text-sm italic text-[var(--color-text-muted)] leading-relaxed">
-                &ldquo;Full throttle. No brakes. Building at max speed.&rdquo;
+              &ldquo;My only competition is the version of me that slept in.&rdquo;
               </p>
             </div>
           </motion.div>
@@ -67,8 +116,10 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
             className="space-y-6"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
           >
+            {/* Honeypot spam protection */}
+            <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
             <div>
               <label className="block text-[10px] uppercase tracking-[0.15em] text-[var(--color-text-muted)] font-['Space_Mono'] mb-2">
                 Name
@@ -112,11 +163,38 @@ export default function Contact() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               type="submit"
-              className="flex items-center gap-3 text-sm text-[var(--color-bg)] bg-[var(--color-papaya)] hover:bg-[var(--color-primary-light)] transition-colors font-['Space_Mono'] tracking-wider cursor-pointer py-3 px-8 rounded-full font-bold uppercase"
+              disabled={status === "sending"}
+              className="flex items-center gap-3 text-sm text-[var(--color-bg)] bg-[var(--color-papaya)] hover:bg-[var(--color-primary-light)] transition-colors font-['Space_Mono'] tracking-wider cursor-pointer py-3 px-8 rounded-full font-bold uppercase disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              <FiSend className="text-xs" />
-              Send Message
+              {status === "sending" ? (
+                <>Sending...</>
+              ) : status === "success" ? (
+                <>
+                  <FiCheck className="text-xs" />
+                  Sent!
+                </>
+              ) : (
+                <>
+                  <FiSend className="text-xs" />
+                  Send Message
+                </>
+              )}
             </motion.button>
+
+            {statusMessage && (
+              <motion.p
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={`text-sm font-['Space_Mono'] ${
+                  status === "success"
+                    ? "text-green-400"
+                    : "text-red-400"
+                }`}
+              >
+                {status === "error" && <FiAlertCircle className="inline mr-1" />}
+                {statusMessage}
+              </motion.p>
+            )}
           </motion.form>
         </div>
       </div>

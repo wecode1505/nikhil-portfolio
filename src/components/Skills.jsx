@@ -1,6 +1,8 @@
-import { useRef } from "react"
+import { useRef, lazy, Suspense } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { skills } from "../data/personalInfo"
+
+const SkillsScene = lazy(() => import("./SkillsScene"))
 
 export default function Skills() {
   const sectionRef = useRef(null)
@@ -11,8 +13,12 @@ export default function Skills() {
   const y = useTransform(scrollYProgress, [0, 1], [40, -40])
 
   return (
-    <section id="skills" className="py-20" ref={sectionRef}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="skills" className="py-20 relative" ref={sectionRef}>
+      {/* 3D Background Scene */}
+      <Suspense fallback={null}>
+        <SkillsScene />
+      </Suspense>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* LN4 split heading — like ON / TRACK */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -54,7 +60,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: gi * 0.1 }}
-              className="p-5 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]/50 hover:border-[var(--color-papaya)]/30 transition-colors"
+              className="p-5 rounded-xl glass-card"
             >
               <h3 className="text-xs uppercase tracking-[0.15em] text-[var(--color-papaya)] font-['Space_Mono'] mb-5">
                 {group.category}
