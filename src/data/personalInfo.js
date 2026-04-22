@@ -100,7 +100,7 @@ export const projects = [
     image: null,
     tags: ["React", "Node.js", "IoT", "Python"],
     github: "https://github.com/wecode1505",
-    live: "https://example.com",
+    live: "https://kyuron.vercel.app",
     featured: true,
   },
   {
