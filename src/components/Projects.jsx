@@ -39,11 +39,19 @@ function ProjectCard({ project, index }) {
       {/* Photo area — LN4 editorial style */}
       <div className={`${isWide ? "aspect-[21/9]" : "aspect-[16/10]"} rounded-lg bg-[var(--color-bg-card)] border border-[var(--color-border)] overflow-hidden relative group-hover:border-[var(--color-papaya)]/50 transition-all duration-400`}>
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-papaya)]/[0.05] to-[var(--color-mclaren-blue)]/[0.03]" />
-        <div className="w-full h-full flex items-center justify-center">
-          <span className={`${isWide ? "text-7xl md:text-9xl" : "text-5xl md:text-7xl"} font-bold text-[var(--color-papaya)]/[0.06] font-['Space_Grotesk'] group-hover:text-[var(--color-papaya)]/[0.15] transition-all duration-700 group-hover:scale-110`}>
-            {project.title.split(" ").map((w) => w[0]).join("")}
-          </span>
-        </div>
+        {project.image ? (
+          <img 
+            src={project.image} 
+            alt={project.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <span className={`${isWide ? "text-7xl md:text-9xl" : "text-5xl md:text-7xl"} font-bold text-[var(--color-papaya)]/[0.06] font-['Space_Grotesk'] group-hover:text-[var(--color-papaya)]/[0.15] transition-all duration-700 group-hover:scale-110`}>
+              {project.title.split(" ").map((w) => w[0]).join("")}
+            </span>
+          </div>
+        )}
         {/* Hover glow overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         {/* Bottom speed line */}
