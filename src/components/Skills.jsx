@@ -1,8 +1,6 @@
-import { useRef, lazy, Suspense, useMemo } from "react"
+import { useRef, useMemo } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { skills } from "../data/personalInfo"
-
-const SkillsScene = lazy(() => import("./SkillsScene"))
 
 export default function Skills() {
   const sectionRef = useRef(null)
@@ -15,12 +13,6 @@ export default function Skills() {
 
   return (
     <section id="skills" className="py-20 relative" ref={sectionRef}>
-      {/* 3D Background Scene - Disabled on mobile */}
-      {!isMobile && (
-        <Suspense fallback={null}>
-          <SkillsScene />
-        </Suspense>
-      )}
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* LN4 split heading — like ON / TRACK */}
         <motion.div

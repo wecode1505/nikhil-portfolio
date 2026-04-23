@@ -1,9 +1,7 @@
-import { useState, lazy, Suspense, useMemo } from "react"
+import { useState, useMemo } from "react"
 import { motion } from "framer-motion"
 import { personalInfo } from "../data/personalInfo"
 import { FiSend, FiCheck, FiAlertCircle } from "react-icons/fi"
-
-const ContactScene = lazy(() => import("./ContactScene"))
 
 const WEB3FORMS_ACCESS_KEY = "041ce127-d23b-4bba-b8f0-0175b05ca3ba"
 
@@ -58,12 +56,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 relative">
-      {/* 3D Background Scene - Disabled on mobile */}
-      {!isMobile && (
-        <Suspense fallback={null}>
-          <ContactScene />
-        </Suspense>
-      )}
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* LN4 split heading */}
         <motion.div

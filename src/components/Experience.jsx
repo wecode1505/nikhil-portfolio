@@ -1,14 +1,11 @@
-import { lazy, Suspense, useMemo } from "react"
+import { useMemo } from "react"
 import { motion } from "framer-motion"
 import { experience } from "../data/personalInfo"
-
-const ExperienceScene = lazy(() => import("./ExperienceScene"))
 
 export default function Experience() {
   const isMobile = useMemo(() => typeof window !== "undefined" && window.innerWidth < 768, [])
   return (
     <section id="experience" className="relative py-20">
-      {!isMobile && <Suspense fallback={null}><ExperienceScene /></Suspense>}
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* LN4 split heading — like ON / TRACK */}
         <motion.div

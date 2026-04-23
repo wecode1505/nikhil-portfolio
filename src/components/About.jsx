@@ -1,9 +1,7 @@
-import { useRef, lazy, Suspense, useMemo } from "react"
+import { useRef, useMemo } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { personalInfo } from "../data/personalInfo"
 import { FiMapPin, FiBook, FiCode } from "react-icons/fi"
-
-const AboutScene = lazy(() => import("./AboutScene"))
 
 export default function About() {
   const sectionRef = useRef(null)
@@ -17,7 +15,6 @@ export default function About() {
 
   return (
     <section id="about" className="relative py-20" ref={sectionRef}>
-      {!isMobile && <Suspense fallback={null}><AboutScene /></Suspense>}
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* LN4 split heading */}
         <motion.div

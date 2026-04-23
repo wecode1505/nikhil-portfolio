@@ -1,8 +1,6 @@
-import { useRef, lazy, Suspense, useMemo } from "react"
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
+import { useRef, useMemo } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { personalInfo } from "../data/personalInfo"
-
-const HeroScene = lazy(() => import("./HeroScene"))
 
 /* Infinite scrolling marquee ticker — like LN4's "mclaren f1 since 2019" */
 function MarqueeTicker() {
@@ -45,12 +43,6 @@ export default function Hero() {
       ref={sectionRef}
       className="min-h-screen flex flex-col justify-between relative pt-20 pb-0"
     >
-      {/* 3D Background Scene - Disabled on mobile for performance */}
-      {!isMobile && (
-        <Suspense fallback={null}>
-          <HeroScene />
-        </Suspense>
-      )}
       <motion.div
         className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col justify-center"
         style={{ scale, opacity }}
