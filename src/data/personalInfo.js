@@ -96,7 +96,7 @@ export const projects = [
     title: "KYURON",
     description:
       "A smart cube — an interactive IoT-enabled Rubik's cube with real-time solve tracking, algorithm suggestions, and performance analytics.",
-    image: null,
+    image: "/kyuron-preview.png",
     tags: ["React", "Node.js", "IoT", "Python"],
     github: "https://github.com/wecode1505",
     live: "https://kyuron.vercel.app",
