@@ -11,7 +11,7 @@ export const personalInfo = {
     "Professional Anchor",
     "B.Tech CSE @ LPU",
   ],
-  avatar: "https://avatars.githubusercontent.com/u/231709192?v=4",
+  avatar: "/pfp.png",
   bio: `I don't believe in doing things halfway. Whether it's a scoreboard, a coding
     terminal, or a national stage, I play to win. I am a Computer Science Engineering
     student at Lovely Professional University with a foundation built on extreme
@@ -103,7 +103,7 @@ export const projects = [
     title: "KYURON",
     description:
       "A smart cube — an interactive IoT-enabled Rubik's cube with real-time solve tracking, algorithm suggestions, and performance analytics.",
-    image: "/kyuron-preview.png",
+    image: "https://images.unsplash.com/photo-1639743772318-85ee465b8671?w=800&q=80",
     tags: ["React", "Node.js", "IoT", "Python"],
     github: "https://github.com/wecode1505",
     live: "https://kyuron.vercel.app",
@@ -114,7 +114,7 @@ export const projects = [
     title: "DEVWEBMEET",
     description:
       "Where client and developer meet — a platform connecting businesses with developers for seamless project collaboration, communication, and delivery.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
     tags: ["React", "WebRTC", "Node.js", "Supabase"],
     github: "https://github.com/wecode1505",
     live: "https://example.com",
@@ -125,7 +125,7 @@ export const projects = [
     title: "SAFALSOPAN",
     description:
       "A success-driven learning platform connecting students with mentors, providing career guidance, skill assessments, and personalized learning paths.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1516534775068-bb57e39c1a29?w=800&q=80",
     tags: ["Next.js", "Supabase", "Python", "Tailwind CSS"],
     github: "https://github.com/wecode1505",
     live: "https://example.com",
@@ -136,7 +136,7 @@ export const projects = [
     title: "AI Content Generator",
     description:
       "An AI-powered content generation tool that creates blog posts, social media content, and marketing copy using OpenAI API.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1677442d019cecf8978307ed3985cf14a376f6d022e37c17a2b564f01d154f63?w=800&q=80",
     tags: ["React", "Python", "FastAPI", "OpenAI"],
     github: "https://github.com/wecode1505",
     live: null,
@@ -147,7 +147,7 @@ export const projects = [
     title: "Portfolio Website",
     description:
       "A modern, responsive portfolio website built with React and Tailwind CSS featuring smooth animations and dark theme.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
     tags: ["React", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/wecode1505",
     live: "https://example.com",
@@ -158,7 +158,7 @@ export const projects = [
     title: "Weather Forecast App",
     description:
       "A weather application with location-based forecasts, interactive maps, and 7-day predictions using external weather APIs.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1629548862265-1ee18fbdc38f?w=800&q=80",
     tags: ["React", "API Integration", "Chart.js"],
     github: "https://github.com/wecode1505",
     live: "https://example.com",
