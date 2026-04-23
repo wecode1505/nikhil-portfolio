@@ -72,13 +72,6 @@ export const skills = [
       { name: "PostgreSQL", level: 80 },
       { name: "Supabase", level: 80 },
       { name: "MySQL", level: 75 },
-            {
-        id: 1,
-        title: "KYURON",
-        description: "A smart cube — an interactive IoT-enabled Rubik's cube...",
-        image: "/kyuron-preview.png",  // ✓ This will now display your new image
-        ...
-      }
       { name: "Firebase", level: 80 },
       { name: "Prisma", level: 75 },
     ],
