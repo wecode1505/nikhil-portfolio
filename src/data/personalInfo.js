@@ -140,7 +140,7 @@ export const projects = [
     title: "Portfolio Website",
     description:
       "A modern, responsive portfolio website built with React and Tailwind CSS featuring smooth animations and dark theme.",
-    image: null,
+    image: "/portfolio-preview.png",
     tags: ["React", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/wecode1505",
     live: "https://example.com",
