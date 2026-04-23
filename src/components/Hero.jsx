@@ -1,4 +1,4 @@
-import { useRef, lazy, Suspense } from "react"
+import { useRef, lazy, Suspense, useMemo } from "react"
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { personalInfo } from "../data/personalInfo"
 
@@ -28,6 +28,7 @@ function MarqueeTicker() {
 export default function Hero() {
   const year = new Date().getFullYear()
   const sectionRef = useRef(null)
+  const isMobile = useMemo(() => typeof window !== "undefined" && window.innerWidth < 768, [])
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -44,10 +45,12 @@ export default function Hero() {
       ref={sectionRef}
       className="min-h-screen flex flex-col justify-between relative pt-20 pb-0"
     >
-      {/* 3D Background Scene */}
-      <Suspense fallback={null}>
-        <HeroScene />
-      </Suspense>
+      {/* 3D Background Scene - Disabled on mobile for performance */}
+      {!isMobile && (
+        <Suspense fallback={null}>
+          <HeroScene />
+        </Suspense>
+      )}
       <motion.div
         className="max-w-7xl mx-auto px-6 w-full flex-1 flex flex-col justify-center"
         style={{ scale, opacity }}

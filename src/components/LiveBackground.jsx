@@ -6,6 +6,13 @@ export default function LiveBackground() {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
+    
+    // Skip heavy animations on mobile
+    if (window.innerWidth < 768) {
+      canvas.style.display = "none"
+      return
+    }
+
     const ctx = canvas.getContext("2d")
 
     const dpr = Math.min(window.devicePixelRatio || 1, 2)

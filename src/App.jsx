@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import './App.css'
 import Preloader from './components/Preloader'
@@ -15,6 +15,7 @@ import Footer from './components/Footer'
 
 function App() {
   const [loading, setLoading] = useState(true)
+  const isMobile = useMemo(() => typeof window !== "undefined" && window.innerWidth < 768, [])
 
   const handleLoadComplete = useCallback(() => {
     setLoading(false)
@@ -22,8 +23,8 @@ function App() {
 
   return (
     <>
-      <LiveBackground />
-      <CursorAura />
+      {!isMobile && <LiveBackground />}
+      {!isMobile && <CursorAura />}
       <AnimatePresence mode="wait">
         {loading && <Preloader onComplete={handleLoadComplete} />}
       </AnimatePresence>

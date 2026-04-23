@@ -1,4 +1,4 @@
-import { useRef, lazy, Suspense } from "react"
+import { useRef, lazy, Suspense, useMemo } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { personalInfo } from "../data/personalInfo"
 import { FiMapPin, FiBook, FiCode } from "react-icons/fi"
@@ -7,6 +7,7 @@ const AboutScene = lazy(() => import("./AboutScene"))
 
 export default function About() {
   const sectionRef = useRef(null)
+  const isMobile = useMemo(() => typeof window !== "undefined" && window.innerWidth < 768, [])
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
@@ -16,7 +17,7 @@ export default function About() {
 
   return (
     <section id="about" className="relative py-20" ref={sectionRef}>
-      <Suspense fallback={null}><AboutScene /></Suspense>
+      {!isMobile && <Suspense fallback={null}><AboutScene /></Suspense>}
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* LN4 split heading */}
         <motion.div
