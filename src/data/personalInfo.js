@@ -11,7 +11,7 @@ export const personalInfo = {
     "Professional Anchor",
     "B.Tech CSE @ LPU",
   ],
-  avatar: "/pfp.png",
+  avatar: "/pfp.jpg",
   bio: `I don't believe in doing things halfway. Whether it's a scoreboard, a coding
     terminal, or a national stage, I play to win. I am a Computer Science Engineering
     student at Lovely Professional University with a foundation built on extreme
