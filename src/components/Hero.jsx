@@ -106,16 +106,6 @@ export default function Hero() {
             <p className="text-[var(--color-text-secondary)] text-sm md:text-base max-w-sm leading-relaxed">
               {personalInfo.tagline}
             </p>
-            <div className="flex flex-wrap gap-3 mt-5 md:mt-0">
-              <a
-                href={personalInfo.featuredRepo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[var(--color-papaya)] px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] text-[#071018] transition-transform hover:-translate-y-1"
-              >
-                Explore DevWebMeet <span aria-hidden="true">↗</span>
-              </a>
-            </div>
           </div>
 
           {/* "Next" callout — like LN4's "Next Race" */}
