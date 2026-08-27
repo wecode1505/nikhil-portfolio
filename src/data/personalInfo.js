@@ -12,12 +12,13 @@ export const personalInfo = {
     "B.Tech CSE @ LPU",
   ],
   avatar: "/pfp.jpg",
-  bio: `I don't believe in doing things halfway. Whether it's a scoreboard, a coding
-    terminal, or a national stage, I play to win. I am a Computer Science Engineering
-    student at Lovely Professional University with a foundation built on extreme
-    discipline and high performance. My technical journey started with a perfect 100/100
-    in Artificial Intelligence in my board exams, and I've been obsessed with the logic
-    of problem-solving ever since.`,
+  bio: `I believe in dedicating myself fully to every goal I set, whether in competitive
+    arenas or at the coding terminal. Currently pursuing my degree in Computer Science
+    Engineering at Lovely Professional University, I apply a highly disciplined approach
+    to my academic and professional growth. My enthusiasm for technology began with a
+    perfect 100/100 in Artificial Intelligence during my board exams, inspiring a
+    deep-seated passion for problem-solving and the limitless possibilities of software
+    development.`,
   longBio: `I am a Double Black Belt in both Taekwondo and Kyokushin Karate, and a National
     & State Gold Medalist. Martial arts taught me the "Warrior Mindset" — the grit
     required for 24-hour hackathons and the focus needed to debug complex systems under
