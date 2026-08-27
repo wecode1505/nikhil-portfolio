@@ -60,6 +60,14 @@ export default function Navbar() {
               Available
             </span>
           </div>
+          <a
+            href={personalInfo.featuredRepo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center gap-2 rounded-full border border-[var(--color-papaya)]/40 px-4 py-2 text-[10px] uppercase tracking-[0.15em] text-[var(--color-papaya)] transition-colors hover:bg-[var(--color-papaya)] hover:text-[#071018]"
+          >
+            DevWebMeet <span aria-hidden="true">↗</span>
+          </a>
           <motion.button
             whileTap={{ scale: 0.9 }}
             className="md:hidden text-xl text-[var(--color-text)]"

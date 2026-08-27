@@ -77,8 +77,8 @@ export default function Hero() {
                 transition={{ duration: 0.9, delay: 0.3 + i * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
                 style={{
                   background: i === 0
-                    ? "linear-gradient(90deg, #ff8000, #ffaa44)"
-                    : "linear-gradient(90deg, #f5f5f5, #999)",
+                    ? "linear-gradient(90deg, #b8ff4d, #65e6ff)"
+                    : "linear-gradient(90deg, #f4f7ff, #8993ad)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -106,6 +106,16 @@ export default function Hero() {
             <p className="text-[var(--color-text-secondary)] text-sm md:text-base max-w-sm leading-relaxed">
               {personalInfo.tagline}
             </p>
+            <div className="flex flex-wrap gap-3 mt-5 md:mt-0">
+              <a
+                href={personalInfo.featuredRepo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-[var(--color-papaya)] px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] text-[#071018] transition-transform hover:-translate-y-1"
+              >
+                Explore DevWebMeet <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
 
           {/* "Next" callout — like LN4's "Next Race" */}

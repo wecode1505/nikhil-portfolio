@@ -37,10 +37,10 @@ function App() {
         >
           <Navbar />
           <Hero />
-          <Projects />
-          <Skills />
-          <Experience />
           <About />
+          <Skills />
+          <Projects />
+          <Experience />
           <Contact />
           <Footer />
         </motion.div>

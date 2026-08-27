@@ -31,6 +31,7 @@ export const personalInfo = {
   university: "Lovely Professional University",
   degree: "B.Tech in Computer Science",
   resumeUrl: "#",
+  featuredRepo: "https://github.com/wecode1505/thedevwebmeet",
   socialLinks: {
     github: "https://github.com/wecode1505",
     linkedin: "https://www.linkedin.com/in/riturajsingh1505",
@@ -109,8 +110,8 @@ export const projects = [
       "Where client and developer meet — a platform connecting businesses with developers for seamless project collaboration, communication, and delivery.",
     image: null,
     tags: ["React", "WebRTC", "Node.js", "Supabase"],
-    github: "https://github.com/wecode1505",
-    live: "https://example.com",
+    github: "https://github.com/wecode1505/thedevwebmeet",
+    live: "https://github.com/wecode1505/thedevwebmeet",
     featured: true,
   },
   {
