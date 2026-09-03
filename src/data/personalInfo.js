@@ -6,9 +6,10 @@ export const personalInfo = {
   headlines: [
     "Full Stack Developer",
     "Founder, Team WECODE",
-    "Multi-Gold Medalist Athlete",
+    "Gold Medalist Athlete",
     "National & State Athlete",
     "Professional Anchor",
+    "Campus Ambassador",
     "B.Tech CSE @ LPU",
   ],
   avatar: "/pfp.jpg",
@@ -109,7 +110,7 @@ export const projects = [
     title: "DEVWEBMEET",
     description:
       "Where client and developer meet — a platform connecting businesses with developers for seamless project collaboration, communication, and delivery.",
-    image: null,
+    image: "/devwebmeet-thumbnail.svg",
     tags: ["React", "WebRTC", "Node.js", "Supabase"],
     github: "https://github.com/wecode1505/thedevwebmeet",
     live: "https://github.com/wecode1505/thedevwebmeet",
@@ -120,7 +121,7 @@ export const projects = [
     title: "SAFALSOPAN",
     description:
       "A success-driven learning platform connecting students with mentors, providing career guidance, skill assessments, and personalized learning paths.",
-    image: null,
+    image: "/safalsopan-thumbnail.svg",
     tags: ["Next.js", "Supabase", "Python", "Tailwind CSS"],
     github: "https://github.com/wecode1505",
     live: "https://example.com",
@@ -213,6 +214,73 @@ export const experience = [
     ],
     current: true,
   },
+  {
+    id: 5,
+    role: "Activities & Societies",
+    company: "RLJDMC DAV Public School, Raniganj, West Bengal",
+    duration: "School Leadership & Activities",
+    description: [
+      "Gold medalist in Taekwondo, Inter-state Kyokushin Karate Royama Cup champion (full-contact), and Handball champion",
+      "Coordinator of the School of Computer Science and school rank 1 holder in the Cyber Security Olympiad",
+      "Scored 100/100 in Artificial Intelligence in the board examinations and cleared the IMU CET examination",
+      "Sports Captain and student leader who led programmes during school functions",
+    ],
+    current: false,
+  },
+  {
+    id: 6,
+    role: "Founder & Developer",
+    company: "DEVWEBMEET",
+    duration: "2024 - Present",
+    description: [
+      "Built a platform where clients and developers meet to plan, communicate, and deliver software projects",
+      "Designed responsive interfaces and collaboration workflows using React, Node.js, WebRTC, and Supabase",
+      "Led product development from concept through implementation and deployment",
+    ],
+    current: true,
+  },
+  {
+    id: 7,
+    role: "Founder & Developer",
+    company: "SAFALSOPAN",
+    duration: "2024 - Present",
+    description: [
+      "Created a success-driven learning platform connecting students with mentors and career guidance",
+      "Developed personalized learning paths and skill-focused experiences with Next.js, Python, and Supabase",
+      "Shaped the product vision around accessible, practical, and outcome-driven education",
+    ],
+    current: true,
+  },
+]
+
+export const achievements = [
+  {
+    category: "Sports",
+    items: [
+      "Taekwondo gold medalist",
+      "4-time Taekwondo national champion",
+      "National Karate champion",
+      "Double black belt in two different forms of martial arts",
+      "Inter-state Kyokushin Karate Royama Cup champion (full-contact)",
+      "Handball champion",
+    ],
+  },
+  {
+    category: "Academic",
+    items: [
+      "School rank 1 holder in the Cyber Security Olympiad",
+      "Scored 100/100 in Artificial Intelligence in board examinations",
+      "Cleared the IMU CET examination",
+      "Coordinator of the School of Computer Science",
+    ],
+  },
+  {
+    category: "Leadership",
+    items: [
+      "Sports Captain of RLJDMC DAV Public School, Raniganj, West Bengal",
+      "Led programmes during school functions",
+    ],
+  },
 ]
 
 export const navLinks = [
@@ -221,5 +289,6 @@ export const navLinks = [
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
+  { name: "Achievements", href: "#achievements" },
   { name: "Contact", href: "#contact" },
 ]

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#102d3b"/>
+      <stop offset="1" stop-color="#071018"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#b8ff4d"/>
+      <stop offset="1" stop-color="#65e6ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="650" rx="32" fill="url(#bg)"/>
+  <circle cx="1010" cy="120" r="190" fill="#65e6ff" opacity=".08"/>
+  <circle cx="170" cy="560" r="240" fill="#b8ff4d" opacity=".06"/>
+  <path d="M100 480h1000" stroke="url(#accent)" stroke-width="4" opacity=".8"/>
+  <text x="100" y="185" fill="#b8ff4d" font-family="Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="8">TEAM WECODE</text>
+  <text x="100" y="310" fill="#f4f7ff" font-family="Arial,sans-serif" font-size="82" font-weight="800">DEVWEBMEET</text>
+  <text x="104" y="370" fill="#a7b2c7" font-family="Arial,sans-serif" font-size="28">Where clients and developers meet.</text>
+  <rect x="100" y="425" width="270" height="58" rx="29" fill="#b8ff4d" opacity=".14" stroke="#b8ff4d"/>
+  <text x="135" y="463" fill="#b8ff4d" font-family="Arial,sans-serif" font-size="22">BUILD TOGETHER</text>
+</svg>

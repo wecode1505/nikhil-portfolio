@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { navLinks } from "../data/personalInfo"
+import { navLinks, personalInfo } from "../data/personalInfo"
 import { HiMenuAlt3, HiX } from "react-icons/hi"
 
 export default function Navbar() {

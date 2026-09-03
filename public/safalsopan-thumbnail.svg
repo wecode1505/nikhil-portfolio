@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#14293b"/>
+      <stop offset="1" stop-color="#071018"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#65e6ff"/>
+      <stop offset="1" stop-color="#b8ff4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="650" rx="32" fill="url(#bg)"/>
+  <circle cx="1040" cy="520" r="250" fill="#b8ff4d" opacity=".07"/>
+  <path d="M100 480h1000" stroke="url(#accent)" stroke-width="4" opacity=".8"/>
+  <text x="100" y="185" fill="#65e6ff" font-family="Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="8">LEARN. GROW. LEAD.</text>
+  <text x="100" y="310" fill="#f4f7ff" font-family="Arial,sans-serif" font-size="82" font-weight="800">SAFALSOPAN</text>
+  <text x="104" y="370" fill="#a7b2c7" font-family="Arial,sans-serif" font-size="28">A success-driven learning platform.</text>
+  <rect x="100" y="425" width="255" height="58" rx="29" fill="#65e6ff" opacity=".14" stroke="#65e6ff"/>
+  <text x="135" y="463" fill="#65e6ff" font-family="Arial,sans-serif" font-size="22">FIND YOUR PATH</text>
+</svg>
